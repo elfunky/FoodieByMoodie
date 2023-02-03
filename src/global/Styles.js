@@ -8,11 +8,24 @@ export const colors = {
   bisque: '#ffe4c4',
   black: '#000000',
   blanchedalmond: '#ffebcd',
-  blue: '#0000ff',
+  deepSkyBlue: '#1877f2',
   blueviolet: '#8a2be2',
   brown: '#a52a2a',
+  lighGreen: '#c8cf2d',
+  orange: '#f69833',
+  lightOrange: '#fdbd39',
+  white: '#ffffff',
+  clooneyGrey: '#c1bec1',
+  karlGrey: '#edeced',
 };
 
-export const parameters ={
+export const parameters = {
   headerHeight: 50,
-}
+};
+
+export const fontFamily = {
+  popinsBold: 'Poppins-Bold',
+  popinsItalic: 'Poppins-Italic',
+  popinsReguler: 'Poppins-Regular',
+  popinsMedium: 'Poppins-Medium',
+};
