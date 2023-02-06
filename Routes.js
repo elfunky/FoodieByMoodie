@@ -15,6 +15,7 @@ import Login from './src/screens/Login';
 import Home from './src/screens/Home';
 import MarketPlace from './src/screens/MarketPlace';
 import CarosulCards from './src/components/CarosulCards';
+import EmailLogin from './src/screens/EmailLogin';
 
 const Routes = observer(() => {
   return (
@@ -49,6 +50,13 @@ const Routes = observer(() => {
                 component={MarketPlace}
                 options={{
                   headerShown: true,
+                }}
+              />
+              <Stack.Screen
+                name="EmailLogin"
+                component={EmailLogin}
+                options={{
+                  headerShown: false,
                 }}
               />
             </Stack.Navigator>

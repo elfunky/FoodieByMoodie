@@ -11,6 +11,9 @@ import {colors} from '../global/Styles';
 const CarosulCards = () => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
+  const onPressGetStarted = () => {
+    RootStore.loginStore.handleScreenNavigation('Login');
+  };
 
   return (
     <Observer>
@@ -41,6 +44,7 @@ const CarosulCards = () => {
             tappableDots={true}
           />
           <ButtonComponent
+            onPress={() => onPressGetStarted()}
             buttonTextColor={colors.white}
             buttonText={'Get started'}
             backGroundColor={colors.lightOrange}

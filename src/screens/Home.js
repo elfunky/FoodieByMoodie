@@ -1,11 +1,13 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {colors} from '../global/Styles';
+import RootStore from '../stores/RootStore';
 
-const Home = () => {
+const Home = ({route}) => {
+  // const {isEmailText} = route.params;
   return (
     <View>
-      <Text>Home</Text>
+      <Text>{RootStore.loginStore.isEmail}</Text>
     </View>
   );
 };

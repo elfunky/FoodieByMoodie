@@ -9,4 +9,7 @@ export default {
   WALKTHROUGH_1: require('../assets/common/wt_1.png'),
   WALKTHROUGH_2: require('../assets/common/wt_2.png'),
   WALKTHROUGH_3: require('../assets/common/wt_3.png'),
+  LOGIN_LOGO: require('../assets/common/login_logo.png'),
+  PASS_ICON: require('../assets/common/pass_icon.png'),
+  EMAIL_ICON: require('../assets/common/email_icon.png'),
 };

@@ -18,6 +18,9 @@ export const colors = {
   clooneyGrey: '#c1bec1',
   karlGrey: '#edeced',
   peach: '#ee6723',
+  teflonGray: '#554d56',
+  whitey: '#f7f7f7',
+  violetGrey: '#636c72',
 };
 
 export const parameters = {

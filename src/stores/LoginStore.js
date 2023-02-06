@@ -3,8 +3,6 @@ import {Platform, Dimensions} from 'react-native';
 
 import * as NavigationService from '../utils/NavigationService';
 
-import {initialWindowMetrics} from 'react-native-safe-area-context';
-
 // import RootStore from './RootStore';
 const {width, height} = Dimensions.get('window');
 const heightRem = 844;
@@ -60,6 +58,17 @@ export class LoginStore {
   //   isTablet = isTablet();
 
   isLoading = false;
+
+  //login variables
+
+  isEmail = [''];
+
+  isPassword = [''];
+
+  reset = () => {
+    this.isEmail = [''];
+    this.isPassword = [''];
+  };
 
   setFields(eName, data) {
     this[eName] = data;
