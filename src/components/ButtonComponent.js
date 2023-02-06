@@ -2,6 +2,7 @@ import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {colors, fontFamily} from '../global/Styles';
 import RootStore from '../stores/RootStore';
+import {Observer} from 'mobx-react';
 
 const ButtonComponent = ({
   isImage,
@@ -13,19 +14,25 @@ const ButtonComponent = ({
   onPress,
 }) => {
   return (
-    <View>
-      <TouchableOpacity
-        onPress={() => onPress()}
-        style={[
-          styles.buttonContainer,
-          {backgroundColor: backGroundColor, marginTop: topMargin},
-        ]}>
-        {isImage && <Image source={imageSource} style={styles.imageStyle} />}
-        <Text style={[styles.buttonText, {color: buttonTextColor}]}>
-          {buttonText}
-        </Text>
-      </TouchableOpacity>
-    </View>
+    <Observer>
+      {() => (
+        <View>
+          <TouchableOpacity
+            onPress={() => onPress()}
+            style={[
+              styles.buttonContainer,
+              {backgroundColor: backGroundColor, marginTop: topMargin},
+            ]}>
+            {isImage && (
+              <Image source={imageSource} style={styles.imageStyle} />
+            )}
+            <Text style={[styles.buttonText, {color: buttonTextColor}]}>
+              {buttonText}
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+    </Observer>
   );
 };
 
@@ -36,20 +43,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     overflow: 'hidden',
     borderRadius: 12,
-    height: RootStore.loginStore.hRem * 54,
-    width: 350,
+    height: RootStore.loginStore.hRem(54),
+    width: RootStore.loginStore.hRem(390),
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
   },
   buttonText: {
     fontFamily: fontFamily.popinsMedium,
-    fontSize: 20,
+    fontSize: RootStore.loginStore.fontRem(20),
   },
   imageStyle: {
-    height: RootStore.loginStore.hRem * 24,
-    width: RootStore.loginStore.hRem * 24,
-    padding: RootStore.loginStore.hRem * 15,
-    marginRight: RootStore.loginStore.hRem * 15,
+    height: RootStore.loginStore.hRem(24),
+    width: RootStore.loginStore.wRem(24),
+    padding: RootStore.loginStore.hRem(15),
+    marginRight: RootStore.loginStore.hRem(15),
   },
 });

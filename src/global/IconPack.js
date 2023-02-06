@@ -6,4 +6,7 @@ export default {
   GOOGLE_LOGO: require('../assets/common/google_logo.png'),
   FACEBOOK_LOGO: require('../assets/common/facebook_logo.png'),
   APPLE_LOGO: require('../assets/common/apple_logo.png'),
+  WALKTHROUGH_1: require('../assets/common/wt_1.png'),
+  WALKTHROUGH_2: require('../assets/common/wt_2.png'),
+  WALKTHROUGH_3: require('../assets/common/wt_3.png'),
 };

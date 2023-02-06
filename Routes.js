@@ -9,12 +9,12 @@ import {navigationRef} from './src/utils/NavigationService';
 
 // Menu or profile stack
 
-import RootStore from './src/stores/RootStore';
 const Stack = createNativeStackNavigator();
 // const Tab = createBottomTabNavigator();
 import Login from './src/screens/Login';
 import Home from './src/screens/Home';
 import MarketPlace from './src/screens/MarketPlace';
+import CarosulCards from './src/components/CarosulCards';
 
 const Routes = observer(() => {
   return (
@@ -23,6 +23,13 @@ const Routes = observer(() => {
         {() => (
           <>
             <Stack.Navigator>
+              <Stack.Screen
+                name="CarosulCards"
+                component={CarosulCards}
+                options={{
+                  headerShown: false,
+                }}
+              />
               <Stack.Screen
                 name="Login"
                 component={Login}

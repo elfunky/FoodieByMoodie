@@ -1,16 +1,18 @@
 import {makeAutoObservable, action, toJS} from 'mobx';
-import {Platform} from 'react-native';
+import {Platform, Dimensions} from 'react-native';
 
 import * as NavigationService from '../utils/NavigationService';
 
 import {initialWindowMetrics} from 'react-native-safe-area-context';
 
 // import RootStore from './RootStore';
-
-const height = initialWindowMetrics.frame.height;
-const width = initialWindowMetrics.frame.width;
-const hRem = height / 772;
-const wRem = width / 375;
+const {width, height} = Dimensions.get('window');
+const heightRem = 844;
+const widthRem = 390;
+const horizontalScale = size => (width / widthRem) * size;
+const verticalScale = size => (height / heightRem) * size;
+const moderateScale = (size, factor = 0.5) =>
+  size + (horizontalScale(size) - size) * factor;
 
 const NUMBERS = [
   {id: 1},
@@ -37,9 +39,11 @@ export class LoginStore {
     makeAutoObservable(this);
   }
 
-  hRem = hRem;
+  hRem = verticalScale;
 
-  wRem = wRem;
+  wRem = horizontalScale;
+
+  fontRem = moderateScale;
 
   numbers = NUMBERS;
 

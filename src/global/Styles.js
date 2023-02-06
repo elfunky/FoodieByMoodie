@@ -17,6 +17,7 @@ export const colors = {
   white: '#ffffff',
   clooneyGrey: '#c1bec1',
   karlGrey: '#edeced',
+  peach: '#ee6723',
 };
 
 export const parameters = {
