@@ -14,6 +14,7 @@ const ButtonComponent = ({
   onPress,
   buttonHeight,
   borderColor,
+  borderRadius,
 }) => {
   return (
     <Observer>
@@ -26,7 +27,8 @@ const ButtonComponent = ({
               {
                 backgroundColor: backGroundColor,
                 marginTop: topMargin,
-                height: RootStore.loginStore.hRem(54) || buttonHeight,
+                borderRadius: borderRadius,
+                height: buttonHeight,
               },
             ]}>
             {isImage && (
@@ -48,7 +50,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     overflow: 'hidden',
-    borderRadius: 15,
 
     width: RootStore.loginStore.hRem(390),
     justifyContent: 'center',

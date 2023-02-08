@@ -9,7 +9,6 @@ const TextInputComponent = ({
   topMargin,
   value,
   onChangeText,
-  onFocus,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   return (
@@ -19,6 +18,8 @@ const TextInputComponent = ({
         {
           marginTop: topMargin,
           backgroundColor: isFocused ? colors.white : colors.whitey,
+          borderWidth: 1,
+          borderColor: isFocused ? colors.karlGrey : colors.whitey,
         },
       ]}>
       <Image source={icon} style={styles.imageIcon} />

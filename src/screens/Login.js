@@ -1,8 +1,6 @@
 // @ts-nocheck
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Home from './Home';
-import Header from './../components/Header';
 import FastImage from 'react-native-fast-image';
 import IconPack from '../global/IconPack';
 import {colors} from '../global/Styles';
@@ -24,10 +22,11 @@ const Login = () => {
         source={IconPack.DRAGON}
         style={styles.container}
         resizeMode={FastImage.resizeMode.cover}>
-        {/* <Header headerTitle={'Welcome'} /> */}
         <Image source={IconPack.LOGO} style={styles.logo} />
         <View style={{marginTop: RootStore.loginStore.hRem(160)}}>
           <ButtonComponent
+            buttonHeight={RootStore.loginStore.hRem(54)}
+            borderRadius={8}
             buttonTextColor={colors.white}
             onPress={() => onNavigateToHome()}
             topMargin={RootStore.loginStore.hRem(12)}
@@ -37,6 +36,8 @@ const Login = () => {
             buttonText={'Sign In with Facebook'}
           />
           <ButtonComponent
+            buttonHeight={RootStore.loginStore.hRem(54)}
+            borderRadius={8}
             onPress={() => onNavigateToMarketPlace()}
             topMargin={RootStore.loginStore.hRem(12)}
             backGroundColor={colors.white}
@@ -45,6 +46,8 @@ const Login = () => {
             buttonText={'Sign In with Google'}
           />
           <ButtonComponent
+            buttonHeight={RootStore.loginStore.hRem(54)}
+            borderRadius={8}
             buttonTextColor={colors.white}
             topMargin={RootStore.loginStore.hRem(12)}
             backGroundColor={colors.black}
@@ -54,12 +57,13 @@ const Login = () => {
           />
           <View style={styles.border} />
           <ButtonComponent
+            buttonHeight={RootStore.loginStore.hRem(54)}
+            borderRadius={8}
             onPress={() => onNavigateToEmailLogin()}
             buttonTextColor={colors.peach}
             topMargin={RootStore.loginStore.hRem(28)}
             backGroundColor={colors.white}
             buttonText={'Sign up with Email'}
-            buttonHeight={RootStore.loginStore.hRem(56)}
           />
         </View>
       </FastImage>

@@ -48,6 +48,8 @@ const CarosulCards = () => {
             buttonTextColor={colors.white}
             buttonText={'Get started'}
             backGroundColor={colors.lightOrange}
+            buttonHeight={RootStore.loginStore.hRem(56)}
+            borderRadius={8}
           />
         </View>
       )}

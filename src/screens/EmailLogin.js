@@ -38,11 +38,12 @@ const EmailLogin = () => {
         <View style={styles.border} />
         <ButtonComponent
           onPress={() => onNavigateToCreateAccount()}
-          buttonTextColor={colors.peach}
+          buttonTextColor={colors.white}
           topMargin={RootStore.loginStore.hRem(28)}
-          backGroundColor={colors.white}
-          buttonText={'Sign up with Email'}
+          backGroundColor={colors.peach}
+          buttonText={'Create account'}
           buttonHeight={RootStore.loginStore.hRem(56)}
+          borderRadius={8}
         />
       </View>
     </View>
