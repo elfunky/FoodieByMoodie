@@ -1,4 +1,4 @@
-
+import './IgnoreWarnings';
 import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Observer} from 'mobx-react';

@@ -1,8 +1,0 @@
-{
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "checkJs": true,
-    "jsx": "react"
-  }
-  // "include": ["./"]
-}
