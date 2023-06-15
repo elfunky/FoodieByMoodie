@@ -65,10 +65,10 @@ export class LoginStore {
 
   isPassword = [''];
 
-  // reset = () => {
-  //   this.isEmail = [''];
-  //   this.isPassword = [''];
-  // };
+  reset = () => {
+    this.isEmail = [''];
+    this.isPassword = [''];
+  };
 
   setFields(eName, data) {
     this[eName] = data;

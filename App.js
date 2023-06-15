@@ -1,9 +1,11 @@
-
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
+import {LogBox, StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Observer} from 'mobx-react';
 import Routes from './Routes';
 const App = () => {
+  React.useEffect(() => {
+    LogBox.ignoreAllLogs();
+  });
   return (
     <Observer>
       {() => (

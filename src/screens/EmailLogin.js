@@ -7,22 +7,28 @@ import RootStore from '../stores/RootStore';
 import {colors, fontFamily} from '../global/Styles';
 import TextInputComponent from '../components/TextInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
+
 const EmailLogin = () => {
   const onNavigateToCreateAccount = () => {
     RootStore.loginStore.handleScreenNavigation('Home');
   };
+  const onChangeEmail = isEmail => {
+    RootStore.loginStore.setFields('isEmail', isEmail);
+  };
+  const onChangePass = isPassword => {
+    RootStore.loginStore.setFields('isPassword', isPassword);
+  };
+
   return (
     <View style={styles.container}>
       <FastImage source={IconPack.LOGIN_LOGO} style={styles.logoImage} />
       <Text style={styles.headersText}>Welcome back!</Text>
-      <View style={{marginTop: RootStore.loginStore.hRem(24)}}>
+      <View style={{marginTop: RootStore.loginStore.hRem(40)}}>
         <TextInputComponent
           onFocus={RootStore.loginStore.isEmail}
           icon={IconPack.EMAIL_ICON}
           placeholder={'Email'}
-          onChangeText={isEmailText =>
-            RootStore.loginStore.setFields('isEmail', isEmailText)
-          }
+          onChangeText={onChangeEmail}
           value={RootStore.loginStore.isEmail}
         />
         <TextInputComponent
@@ -30,9 +36,7 @@ const EmailLogin = () => {
           topMargin={RootStore.loginStore.hRem(16)}
           icon={IconPack.PASS_ICON}
           placeholder={'Password'}
-          onChangeText={isPassword =>
-            RootStore.loginStore.setFields('isPassword', isPassword)
-          }
+          onChangeText={onChangePass}
           value={RootStore.loginStore.isPassword}
         />
         <View style={styles.border} />
@@ -45,6 +49,10 @@ const EmailLogin = () => {
           buttonHeight={RootStore.loginStore.hRem(56)}
           borderRadius={8}
         />
+        <Text style={styles.termsText}>
+          By clicking "Create account", I agree to SnackOverflow’s TOS and
+          Privacy Policy.
+        </Text>
       </View>
     </View>
   );
@@ -76,5 +84,12 @@ const styles = StyleSheet.create({
     width: RootStore.loginStore.wRem(230),
     alignSelf: 'center',
     marginTop: RootStore.loginStore.hRem(28),
+  },
+  termsText: {
+    lineHeight: RootStore.loginStore.fontRem(16),
+    fontFamily: fontFamily.popinsReguler,
+    fontSize: RootStore.loginStore.fontRem(12),
+    marginTop: RootStore.loginStore.hRem(32),
+    marginHorizontal: RootStore.loginStore.wRem(16),
   },
 });
